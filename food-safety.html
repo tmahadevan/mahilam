@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FSSAI Compliance Starter Pack · Mahilam</title>
+<meta name="description" content="FSSAI licence support, hygiene gap audit, documentation and digital records for small food businesses in Trichy, Dindigul and across Tamil Nadu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&family=Noto+Sans+Tamil:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f8f6ef; --surface:#ffffff; --ink:#18201b; --muted:#5d665f;
+    --line:#e3e0d4; --leaf:#1f5b3f; --leaf-soft:#e4efe8; --bloom:#c9962b; --bloom-soft:#f7eedb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0f1411; --surface:#161d18; --ink:#eef1ec; --muted:#a3ada5;
+      --line:#26302a; --leaf:#5fbf8f; --leaf-soft:#18271f; --bloom:#e3b450; --bloom-soft:#2a2416;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f1411; --surface:#161d18; --ink:#eef1ec; --muted:#a3ada5;
+    --line:#26302a; --leaf:#5fbf8f; --leaf-soft:#18271f; --bloom:#e3b450; --bloom-soft:#2a2416;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:var(--leaf)}
+  .ta{font-family:"Noto Sans Tamil",Inter,sans-serif}
+  .page{max-width:820px;margin:0 auto;padding:32px 16px 40px}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15}
+
+  .top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:28px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:600;text-decoration:none;color:var(--ink)}
+  .brand svg{width:28px;height:28px}
+  .back{font-size:14px;font-weight:500;text-decoration:none}
+
+  .hero{background:var(--leaf);color:#fff;border-radius:22px;padding:34px 30px}
+  .hero .tag{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.14);padding:5px 12px;border-radius:999px}
+  .hero h1{font-size:clamp(30px,5.5vw,44px);margin:16px 0 8px}
+  .hero .ta-line{font-size:clamp(17px,2.6vw,20px);font-weight:600;opacity:.95}
+  .hero p{margin-top:14px;font-size:16.5px;opacity:.92;max-width:58ch}
+
+  h2{font-size:clamp(22px,3.4vw,28px);margin:36px 0 6px}
+  .sub{color:var(--muted);margin-bottom:18px}
+
+  .who{display:flex;flex-wrap:wrap;gap:8px}
+  .who span{font-size:14px;padding:7px 13px;border-radius:999px;background:var(--surface);border:1px solid var(--line)}
+
+  .pack{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media (max-width:640px){.pack{grid-template-columns:1fr}}
+  .item{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .item .n{font-family:Fraunces,serif;font-weight:700;color:var(--bloom);font-size:14px}
+  .item h3{font-size:18.5px;margin:6px 0 4px}
+  .item .ta{display:block;font-size:13.5px;color:var(--leaf);font-weight:600;margin-bottom:6px}
+  .item p{color:var(--muted);font-size:14.5px}
+
+  .addons{background:var(--bloom-soft);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .addons ul{list-style:none;display:grid;gap:10px;margin-top:6px}
+  .addons li{padding-left:24px;position:relative}
+  .addons li::before{content:"";position:absolute;left:2px;top:8px;width:10px;height:10px;border:2px solid var(--bloom);border-radius:2px;transform:rotate(45deg)}
+  .addons li span{color:var(--muted);font-size:14.5px}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  @media (max-width:640px){.steps{grid-template-columns:1fr 1fr}}
+  .step{border-top:3px solid var(--leaf);padding-top:10px}
+  .step b{display:block;font-size:15px}
+  .step span{color:var(--muted);font-size:14px}
+
+  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media (max-width:640px){.why{grid-template-columns:1fr}}
+  .why div{font-size:14.5px;color:var(--muted)}
+  .why b{display:block;color:var(--ink);font-size:15.5px;margin-bottom:2px}
+
+  .contact{margin-top:36px;background:var(--leaf-soft);border-radius:18px;padding:26px;text-align:center}
+  .contact h2{margin:0 0 6px}
+  .contact .lines{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;margin-top:12px;font-weight:600}
+  .contact .lines a{text-decoration:none}
+
+  .fine{color:var(--muted);font-size:12.5px;margin-top:22px;line-height:1.55}
+
+  @media print{
+    :root{--bg:#fff;--surface:#fff}
+    body{font-size:13px}
+    .page{padding:0;max-width:none}
+    .back{display:none}
+    .hero{padding:22px 24px;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    h2{margin:18px 0 4px}
+    .item,.addons,.contact{break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .item{padding:12px}
+    .who span{padding:4px 10px}
+    @page{size:A4;margin:12mm}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="top">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><g transform="translate(20 20)"><g fill="var(--bloom-soft)" stroke="var(--bloom)" stroke-width="1.6"><path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z"/><path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(45)"/><path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(90)"/><path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(135)"/><path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(180)"/><path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(225)"/><path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(270)"/><path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(315)"/></g><circle r="4.2" fill="var(--leaf)"/></g></svg>
+      Mahilam Consulting
+    </a>
+    <a class="back" href="index.html">← mahilam.com</a>
+  </div>
+
+  <main>
+    <header class="hero">
+      <span class="tag">For food businesses · Tamil Nadu</span>
+      <h1>FSSAI Compliance Starter Pack</h1>
+      <div class="ta ta-line" lang="ta">உங்கள் உணவுத் தொழிலுக்கு FSSAI விதிமுறைகள் — எளிமையாக, சரியாக.</div>
+      <p>Get your licence in order, fix hygiene gaps before an inspector finds them, and keep the records FSSAI expects — without slowing down production.</p>
+    </header>
+
+    <h2>Who it's for</h2>
+    <p class="sub">Small and growing food businesses that need a licence or registration and want to stay inspection-ready.</p>
+    <div class="who">
+      <span>Pickles &amp; masala units</span>
+      <span>Snacks &amp; sweets</span>
+      <span>Bakeries</span>
+      <span>Flour, rice &amp; oil mills</span>
+      <span>Dairy units</span>
+      <span>Cloud kitchens &amp; caterers</span>
+      <span>Home-food startups</span>
+    </div>
+
+    <h2>What's in the pack</h2>
+    <p class="sub">Four steps, done with you on your premises.</p>
+    <div class="pack">
+      <div class="item">
+        <span class="n">01</span>
+        <h3>Licence health check</h3>
+        <span class="ta" lang="ta">உரிமம் சரிபார்ப்பு</span>
+        <p>We confirm whether you need basic registration, a State licence or a Central licence, check that your product categories are correct, and prepare and file new applications or renewals.</p>
+      </div>
+      <div class="item">
+        <span class="n">02</span>
+        <h3>Hygiene gap audit</h3>
+        <span class="ta" lang="ta">சுகாதார ஆய்வு</span>
+        <p>A walk-through of your unit against the Schedule 4 hygiene and sanitary requirements, followed by a written report with photos and a prioritised list of fixes.</p>
+      </div>
+      <div class="item">
+        <span class="n">03</span>
+        <h3>Documents &amp; records</h3>
+        <span class="ta" lang="ta">ஆவணங்கள் &amp; பதிவேடுகள்</span>
+        <p>A simple food safety plan, cleaning and pest-control schedules, and ready-to-use record formats for temperature, cleaning, training and supplier checks.</p>
+      </div>
+      <div class="item">
+        <span class="n">04</span>
+        <h3>Team hygiene session</h3>
+        <span class="ta" lang="ta">பணியாளர் பயிற்சி</span>
+        <p>A practical, on-site awareness session for your food handlers on personal hygiene, cross-contamination and safe storage — in Tamil or English.</p>
+      </div>
+    </div>
+
+    <h2>Add-ons</h2>
+    <div class="addons">
+      <ul>
+        <li><strong>Digital logbook app</strong> <span>— record cleaning, temperature and batch details on a phone, always ready to show an inspector.</span></li>
+        <li><strong>Temperature monitoring</strong> <span>— wireless sensors for cold rooms and storage areas, with phone alerts when limits are crossed.</span></li>
+        <li><strong>Label check</strong> <span>— review of your packaging labels against FSSAI labelling requirements.</span></li>
+        <li><strong>Monthly compliance support</strong> <span>— periodic visits, record reviews and reminders for renewals and annual returns.</span></li>
+      </ul>
+    </div>
+
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><b>1. Call</b><span>A free 15-minute chat about your business.</span></div>
+      <div class="step"><b>2. Visit</b><span>On-site walk-through and licence check.</span></div>
+      <div class="step"><b>3. Report</b><span>Clear list of fixes and documents.</span></div>
+      <div class="step"><b>4. Follow-up</b><span>Re-check once fixes are done.</span></div>
+    </div>
+
+    <h2>Why Mahilam</h2>
+    <div class="why">
+      <div><b>FSSAI FoSTaC certified</b>Food Safety Supervisor (Advanced Manufacturing), certified under FSSAI's FoSTaC programme.</div>
+      <div><b>Food + technology</b>We also build the apps and sensors that keep your records — one partner, not two.</div>
+      <div><b>Local &amp; bilingual</b>Based in Trichy, working across Tamil Nadu, in Tamil and English.</div>
+    </div>
+
+    <section class="contact">
+      <h2>Book a free 15-minute call</h2>
+      <div class="ta" lang="ta">இலவச ஆலோசனைக்கு அழைக்கவும்</div>
+      <div class="lines">
+        <span>📞 +91-9345696951</span>
+        <a href="https://wa.me/919345696951">WhatsApp</a>
+        <a href="index.html">mahilam.com</a>
+      </div>
+    </section>
+
+    <p class="fine">Mahilam Consulting is an independent consultancy and is not affiliated with FSSAI. Licences and registrations are granted only by FSSAI and the State Food Safety Department; we help you prepare applications and meet requirements. The team hygiene session is an awareness programme and is not a FoSTaC certification course. Mahadevan Thanavel, Mahilam Ventures, Tiruchirappalli, Tamil Nadu.</p>
+  </main>
+</div>
+</body>
+</html>

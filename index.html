@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mahilam Ventures</title>
+<meta name="description" content="Mahilam Ventures — software, AI and technology consulting from Tiruchirappalli, India. Built to last, like the Magizham flower.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f8f6ef; --surface:#ffffff; --ink:#18201b; --muted:#5d665f;
+    --line:#e3e0d4; --leaf:#1f5b3f; --leaf-soft:#e4efe8; --bloom:#c9962b; --bloom-soft:#f7eedb;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0f1411; --surface:#161d18; --ink:#eef1ec; --muted:#a3ada5;
+      --line:#26302a; --leaf:#5fbf8f; --leaf-soft:#18271f; --bloom:#e3b450; --bloom-soft:#2a2416;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0f1411; --surface:#161d18; --ink:#eef1ec; --muted:#a3ada5;
+    --line:#26302a; --leaf:#5fbf8f; --leaf-soft:#18271f; --bloom:#e3b450; --bloom-soft:#2a2416;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 16px}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15;letter-spacing:-.01em}
+
+  header{border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:17px}
+  .brand svg{width:30px;height:30px}
+  .nav ul{display:flex;gap:24px;list-style:none;font-size:15px;color:var(--muted)}
+  .nav a{text-decoration:none}
+  .nav ul a:hover{color:var(--ink)}
+  
+  /* Mobile Navigation Fix */
+  @media (max-width:660px){
+    .nav { flex-direction: column; height: auto; padding: 16px 0; gap: 12px; }
+    .nav ul { flex-wrap: wrap; justify-content: center; gap: 12px 20px; }
+  }
+
+  .hero{padding:96px 0 80px;display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:center}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--leaf);margin-bottom:18px}
+  .hero h1{font-size:clamp(42px,7vw,76px);font-weight:700}
+  .hero h1 em{font-style:normal;color:var(--leaf)}
+  .hero p{font-size:clamp(17px,2.1vw,19px);color:var(--muted);max-width:52ch;margin-top:22px}
+  .hero-art{display:flex;justify-content:center}
+  .hero-art svg{width:min(320px,80%);height:auto}
+  @media (max-width:820px){.hero{grid-template-columns:1fr;padding:64px 0 56px}.hero-art{display:none}}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
+  .btn.primary{background:var(--leaf);border-color:var(--leaf);color:#fff}
+  .btn:hover{transform:translateY(-1px)}
+
+  section{padding:80px 0;border-top:1px solid var(--line)}
+  .sec-head{max-width:660px;margin-bottom:42px}
+  .sec-head .eyebrow{margin-bottom:12px}
+  .sec-head h2{font-size:clamp(28px,4vw,42px)}
+  .sec-head p{color:var(--muted);margin-top:12px;font-size:17px}
+
+  .ventures{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media (max-width:820px){.ventures{grid-template-columns:1fr}}
+  .venture{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:32px}
+  .venture .live{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--leaf);background:var(--leaf-soft);padding:5px 11px;border-radius:999px}
+  .venture .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--leaf)}
+  .venture h3{font-size:28px;margin:16px 0 8px}
+  .venture > p{color:var(--muted)}
+  .venture ul{list-style:none;margin-top:22px;display:grid;gap:14px}
+  .venture li{padding-left:28px;position:relative}
+  .venture li::before{content:"";position:absolute;left:0;top:7px;width:12px;height:12px;border-radius:3px;background:var(--bloom-soft);border:2px solid var(--bloom);transform:rotate(45deg)}
+  .venture li strong{display:block;font-weight:600}
+  .venture li span{color:var(--muted);font-size:15px}
+
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:820px){.grid3{grid-template-columns:1fr}}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:26px}
+  .card .num{font-family:Fraunces,serif;color:var(--bloom);font-weight:700;font-size:15px}
+  .card h3{font-size:21px;margin:8px 0 6px}
+  .card p{color:var(--muted);font-size:15px}
+
+  .domains{display:flex;flex-wrap:wrap;gap:10px}
+  .domains span{font-size:14.5px;font-weight:500;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+
+  .story{display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center}
+  .story .ta{font-family:Fraunces,serif;font-size:clamp(46px,8vw,84px);color:var(--leaf);line-height:1}
+  .story p{color:var(--muted);font-size:17px;margin-bottom:14px;max-width:60ch}
+  .story p:first-child{color:var(--ink);font-family:Fraunces,serif;font-size:clamp(20px,2.6vw,26px);line-height:1.4}
+  @media (max-width:720px){.story{grid-template-columns:1fr;gap:18px}}
+
+  .founder{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:start}
+  .avatar{width:84px;height:84px;border-radius:50%;background:var(--leaf-soft);display:grid;place-items:center;font-family:Fraunces,serif;font-size:30px;color:var(--leaf);border:1px solid var(--line)}
+  .founder h3{font-size:26px}
+  .founder .role{color:var(--leaf);font-weight:600;font-size:15px;margin:4px 0 14px}
+  .founder p{color:var(--muted);max-width:64ch}
+  .links{display:flex;gap:18px;margin-top:16px;font-weight:600;font-size:15px}
+  .links a{text-decoration:none;color:var(--leaf)}
+  @media (max-width:560px){.founder{grid-template-columns:1fr}}
+
+  .later{color:var(--muted);font-size:15px;margin-top:28px}
+
+  .contact{text-align:center}
+  .contact h2{font-size:clamp(30px,4.5vw,46px)}
+  .contact p{color:var(--muted);max-width:54ch;margin:14px auto 0;font-size:17px}
+  .contact .cta{justify-content:center}
+
+  footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:14px}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <!-- Mark: a small star-shaped Magizham blossom -->
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <g transform="translate(20 20)">
+          <g fill="var(--bloom-soft)" stroke="var(--bloom)" stroke-width="1.6">
+            <path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z"/>
+            <path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(45)"/>
+            <path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(90)"/>
+            <path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(135)"/>
+            <path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(180)"/>
+            <path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(225)"/>
+            <path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(270)"/>
+            <path d="M0 -17 L3.2 -6 L0 -3 L-3.2 -6 Z" transform="rotate(315)"/>
+          </g>
+          <circle r="4.2" fill="var(--leaf)"/>
+        </g>
+      </svg>
+      Mahilam Ventures
+    </a>
+    <ul>
+      <li><a href="#technologies">Technologies</a></li>
+      <li><a href="#consulting">Consulting</a></li>
+      <li><a href="#story">Our name</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div>
+      <span class="eyebrow">Tiruchirappalli, India · Est. 2026</span>
+      <h1>Work that <em>lasts.</em></h1>
+      <p>Mahilam Ventures builds software and AI for businesses, clinics, farms and research teams — and stays to make sure it keeps working long after delivery.</p>
+      <div class="cta">
+        <a class="btn primary" href="#contact">Start a project</a>
+        <a class="btn" href="#technologies">What we do</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <!-- Branch of Magizham blossoms -->
+      <svg viewBox="0 0 300 300">
+        <path d="M30 270 C90 210 140 170 270 40" fill="none" stroke="var(--leaf)" stroke-width="4" stroke-linecap="round"/>
+        <g fill="var(--leaf)" opacity=".85">
+          <ellipse cx="95" cy="200" rx="34" ry="13" transform="rotate(-20 95 200)"/>
+          <ellipse cx="140" cy="185" rx="30" ry="11" transform="rotate(25 140 185)"/>
+          <ellipse cx="175" cy="125" rx="34" ry="13" transform="rotate(-35 175 125)"/>
+          <ellipse cx="215" cy="115" rx="28" ry="10" transform="rotate(15 215 115)"/>
+          <ellipse cx="235" cy="62" rx="26" ry="10" transform="rotate(-50 235 62)"/>
+        </g>
+        <g fill="var(--bloom-soft)" stroke="var(--bloom)" stroke-width="2">
+          <g transform="translate(120 160)"><path d="M0-22 4-8 0-4-4-8Z"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(45)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(90)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(135)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(180)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(225)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(270)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(315)"/></g>
+          <g transform="translate(200 90) scale(.8)"><path d="M0-22 4-8 0-4-4-8Z"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(45)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(90)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(135)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(180)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(225)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(270)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(315)"/></g>
+          <g transform="translate(70 235) scale(.65)"><path d="M0-22 4-8 0-4-4-8Z"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(45)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(90)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(135)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(180)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(225)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(270)"/><path d="M0-22 4-8 0-4-4-8Z" transform="rotate(315)"/></g>
+        </g>
+        <g fill="var(--leaf)"><circle cx="120" cy="160" r="5"/><circle cx="200" cy="90" r="4"/><circle cx="70" cy="235" r="3.4"/></g>
+      </svg>
+    </div>
+  </div>
+
+  <section id="technologies">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">What we do</span>
+        <h2>Ventures open for work</h2>
+        <p>We start where our experience is deepest: building software and advising on technology.</p>
+      </div>
+      <div class="ventures">
+        <article class="venture">
+          <span class="live">Open for projects</span>
+          <h3>Mahilam Technologies</h3>
+          <p>Software and AI, designed, built and supported end to end.</p>
+          <ul>
+            <li><strong>Custom software</strong><span>Web applications and APIs in .NET, ASP.NET Core and React.</span></li>
+            <li><strong>Cloud</strong><span>Architecture, migration and deployment on AWS and GCP.</span></li>
+            <li><strong>AI &amp; LLM applications</strong><span>Chatbots, retrieval-augmented search over your documents, and AI agents.</span></li>
+            <li><strong>Computer vision &amp; data</strong><span>Image-based detection, sensor data pipelines and machine-learning models.</span></li>
+          </ul>
+        </article>
+        <article class="venture" id="consulting">
+          <span class="live">Open for engagements</span>
+          <h3>Mahilam Consulting</h3>
+          <p>Clear technical advice before you spend, and a steady hand while you build.</p>
+          <ul>
+            <li><strong>AI feasibility &amp; strategy</strong><span>What AI can realistically do for your organisation, and what it will cost.</span></li>
+            <li><strong>Architecture review</strong><span>An independent look at your system's design, scalability and security.</span></li>
+            <li><strong>Research data &amp; modelling</strong><span>Analysis and predictive models for agricultural and medical research teams.</span></li>
+            <li><strong>Technical proposals</strong><span>Technology plans and system design for research and innovation proposals.</span></li>
+            <li><strong>Food safety &amp; FSSAI compliance</strong><span>Licence support, hygiene gap audits, documentation and digital records for food businesses. <a href="food-safety.html" style="color:var(--leaf);font-weight:600;text-decoration:none">See the Starter Pack →</a></span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">How we work</span>
+        <h2>Simple, honest engagements</h2>
+      </div>
+      <div class="grid3">
+        <div class="card">
+          <span class="num">01</span>
+          <h3>Fixed-scope project</h3>
+          <p>A defined deliverable, timeline and price, agreed before work begins.</p>
+        </div>
+        <div class="card">
+          <span class="num">02</span>
+          <h3>Monthly retainer</h3>
+          <p>Ongoing development, maintenance and support with a dedicated block of hours.</p>
+        </div>
+        <div class="card">
+          <span class="num">03</span>
+          <h3>Advisory sessions</h3>
+          <p>Focused consulting calls for reviews, planning and second opinions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Experience</span>
+        <h2>Domains we know</h2>
+        <p>Experience drawn from enterprise finance, university research labs, medical technology and agricultural science.</p>
+      </div>
+      <div class="domains">
+        <span>E-commerce</span>
+        <span>Digital marketing</span>
+        <span>Healthcare &amp; medtech</span>
+        <span>Agriculture &amp; plant health</span>
+        <span>Food processing &amp; food safety</span>
+        <span>Financial services</span>
+        <span>Research &amp; academia</span>
+        <span>Networking &amp; cloud systems</span>
+        <span>Small &amp; growing businesses</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="story">
+    <div class="wrap story">
+      <div class="ta" lang="ta">மகிழம்</div>
+      <div>
+        <p>Mahilam is named after the Magizham tree, whose small star-shaped flowers keep their fragrance long after they dry.</p>
+        <p>That is the standard we hold our work to: software that stays useful, advice that still holds up a year later, and relationships that last beyond a single project. In Tamil, the root of the word also means joy.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="founder">
+    <div class="wrap founder">
+      <div class="avatar" aria-hidden="true">M</div>
+      <div>
+        <h3>Mahadevan Thanavel</h3>
+        <div class="role">Founder</div>
+        <p>Full-stack tech lead and applied AI engineer. Formerly Lead Analyst at BNY Mellon, with years of building .NET, React and cloud systems and leading engineering teams. Four years of research on programmable networks at National Chiao Tung University, Taiwan. M.Tech in Medical Technologies from IIT Jodhpur and AIIMS Jodhpur, and M.E. in Computer Science (Networks) from Anna University. FSSAI FoSTaC-certified Food Safety Supervisor (Advanced Manufacturing).</p>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/tmahadevan" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <!-- EDIT: once your personal site is live, remove the comment markers -->
+          <!-- <a href="https://tmahadevan.github.io" target="_blank" rel="noopener">Research ↗</a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact">
+      <h2>Let's build something that lasts</h2>
+      <p>Tell us what you need — a new application, an AI feature, or a second opinion on a technical plan. We reply within one working day.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://www.linkedin.com/in/tmahadevan" target="_blank" rel="noopener">Message on LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Mahilam Ventures · Tiruchirappalli, Tamil Nadu, India</span>
+    <!-- EDIT: after Udyam registration, add e.g. <span>Udyam: UDYAM-TN-XX-XXXXXXX</span> -->
+    <!-- Optional: <span lang="ta">ஓம் முருகா</span> -->
+    <span>Work that lasts.</span>
+  </div>
+</footer>
+
+</body>
+</html>
